@@ -1,0 +1,270 @@
+openapi: 3.0.3
+info:
+  title: Clock Service Demo
+  description: |-
+    This is an example API for demonstration purposes.
+    
+    I use this resource for a presentation about Rapid Prototyping in software development.
+
+  contact:
+    email: lukas.tietenberg@outlook.de
+
+  license:
+    name: MIT
+    url: https://github.com/sourcefranke/clock-service-demo-api?tab=MIT-1-ov-file
+
+  version: 1.0.11
+
+servers:
+  - url: http://localhost:8080
+
+tags:
+  - name: time
+    description: Take your time ;P
+
+paths:
+  /time:
+    get:
+      tags:
+        - time
+      summary: Returns current time
+      description: Request the current time. Therefore, you can optionally specify date format and time zone
+      operationId: getTime
+      parameters:
+        - name: date-format
+          in: query
+          description: Specify format for date and/or time
+          required: false
+          explode: true
+          schema:
+            type: string
+            default: yyyy-MM-dd'T'HH:mm:ss
+        - name: time-zone
+          in: query
+          description: Specify the time zone
+          required: false
+          explode: true
+          schema:
+            type: string
+            enum:
+              - ACDT
+              - ACST
+              - ACT
+              - ACT
+              - ACWST
+              - ADT
+              - AEDT
+              - AEST
+              - AET
+              - AFT
+              - AKDT
+              - AKST
+              - ALMT
+              - AMST
+              - AMT
+              - AMT
+              - ANAT
+              - AQTT
+              - ART
+              - AST
+              - AST
+              - AWST
+              - AZOST
+              - AZOT
+              - AZT
+              - BNT
+              - BIOT
+              - BIT
+              - BOT
+              - BRST
+              - BRT
+              - BST
+              - BST
+              - BST
+              - BTT
+              - CAT
+              - CCT
+              - CDT
+              - CDT
+              - CEST
+              - CET
+              - CHADT
+              - CHAST
+              - CHOT
+              - CHOST
+              - CHST
+              - CHUT
+              - CIST
+              - CKT
+              - CLST
+              - CLT
+              - COST
+              - COT
+              - CST
+              - CST
+              - CST
+              - CT
+              - CVT
+              - CWST
+              - CXT
+              - DAVT
+              - DDUT
+              - DFT
+              - EASST
+              - EAST
+              - EAT
+              - ECT
+              - ECT
+              - EDT
+              - EEST
+              - EET
+              - EGST
+              - EGT
+              - EST
+              - ET
+              - FET
+              - FJT
+              - FKST
+              - FKT
+              - FNT
+              - GALT
+              - GAMT
+              - GET
+              - GFT
+              - GILT
+              - GIT
+              - GMT
+              - GST
+              - GST
+              - GYT
+              - HDT
+              - HAEC
+              - HST
+              - HKT
+              - HMT
+              - HOVST
+              - HOVT
+              - ICT
+              - IDLW
+              - IDT
+              - IOT
+              - IRDT
+              - IRKT
+              - IRST
+              - IST
+              - IST
+              - IST
+              - JST
+              - KALT
+              - KGT
+              - KOST
+              - KRAT
+              - KST
+              - LHST
+              - LHST
+              - LINT
+              - MAGT
+              - MART
+              - MAWT
+              - MDT
+              - MET
+              - MEST
+              - MHT
+              - MIST
+              - MIT
+              - MMT
+              - MSK
+              - MST
+              - MST
+              - MT
+              - MUT
+              - MVT
+              - MYT
+              - NCT
+              - NDT
+              - NFT
+              - NOVT
+              - NPT
+              - NST
+              - NT
+              - NUT
+              - NZDT
+              - NZST
+              - OMST
+              - ORAT
+              - PDT
+              - PET
+              - PETT
+              - PGT
+              - PHOT
+              - PHT
+              - PHST
+              - PKT
+              - PMDT
+              - PMST
+              - PONT
+              - PST
+              - PT
+              - PWT
+              - PYST
+              - PYT
+              - RET
+              - ROTT
+              - SAKT
+              - SAMT
+              - SAST
+              - SBT
+              - SCT
+              - SDT
+              - SGT
+              - SLST
+              - SRET
+              - SRT
+              - SST
+              - SYOT
+              - TAHT
+              - THA
+              - TFT
+              - TJT
+              - TKT
+              - TLT
+              - TMT
+              - TRT
+              - TOT
+              - TST
+              - TVT
+              - ULAST
+              - ULAT
+              - UTC
+              - UYST
+              - UYT
+              - UZT
+              - VET
+              - VLAT
+              - VOLT
+              - VOST
+              - VUT
+              - WAKT
+              - WAST
+              - WAT
+              - WEST
+              - WET
+              - WIB
+              - WIT
+              - WITA
+              - WGST
+              - WGT
+              - WST
+              - YAKT
+              - YEKT
+            default: GMT
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 2024-08-17T09:01:47
+        '400':
+          description: Invalid tag value
