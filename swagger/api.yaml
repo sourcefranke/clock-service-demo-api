@@ -262,9 +262,18 @@ paths:
         '200':
           description: successful operation
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: 2024-08-17T09:01:47
+                type: object
+                properties:
+                  time:
+                    type: string
+                    description: The actual time value
+                  date-format:
+                    type: string
+                    description: The date format used
+                  time-zone:
+                    type: string
+                    description: The time zone used
         '400':
           description: Invalid tag value
