@@ -5,6 +5,10 @@ info:
     This is an example API for demonstration purposes.
     
     I use this resource for a presentation about Rapid Prototyping in software development.
+    
+    The specification file for this API is hosted here: [**https://github.com/sourcefranke/clock-service-demo-api**](https://github.com/sourcefranke/clock-service-demo-api)
+    
+    The implementation code for this API is hosted here: [**https://github.com/sourcefranke/clock-service-demo-impl**](https://github.com/sourcefranke/clock-service-demo-impl)
 
   contact:
     email: lukas.tietenberg@outlook.de
