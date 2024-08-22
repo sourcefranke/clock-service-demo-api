@@ -20,10 +20,7 @@ info:
   version: 1.0.11
 
 servers:
-  - url: https://clock-service-demo-4210f5ad8b0c.herokuapp.com/
-    description: productive service deployed on Heroku
   - url: http://localhost:8080
-    description: if you start the service locally
 
 tags:
   - name: time
@@ -673,5 +670,9 @@ paths:
                   time-zone:
                     type: string
                     description: The time zone used
-        '400':
-          description: Invalid tag value
+              "example":
+                {
+                  "time": "15:06:13",
+                  "date-format": "HH:mm:ss",
+                  "time-zone": "Europe/Berlin"
+                }
