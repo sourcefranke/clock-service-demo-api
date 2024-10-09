@@ -27,6 +27,19 @@ tags:
     description: Take your time ;P
 
 paths:
+  /:
+    get:
+      tags:
+        - time
+      summary: Say Hi!
+      responses:
+        '200':
+          description: successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+              "example": "Hi there, I'm a demo!"
   /time:
     get:
       tags:
@@ -670,7 +683,7 @@ paths:
                   time-zone:
                     type: string
                     description: The time zone used
-              "example":
+              example:
                 {
                   "time": "15:06:13",
                   "date-format": "HH:mm:ss",
